@@ -1,17 +1,24 @@
-When to use : 
- - You have many different variants of an algorithm
- - You want to isolate business logic of a class from the implementations details of algorithms that may not be important in the invoker class 
- - You have massive conditional statement that switches between differentvairants of the same algorithm
-How to implement : 
- - Detect an algorithm that's prone to frequent changes.
- - Declare interface which is common for all variants fo the algorithm 
- - Implement the interface in all variants of algorithm 
- - Clients need to associate it as what they want to behave
-Pros: 
- - Swap inside object at runtime 
- - Isolate variants 
- - Open/close principal.You create new strategies
-Cons: 
- - You have just a couple of viriants of algorithm 
- - Clients need to select a proper vairant when using 
- - Lots of programing language now support functional programming, we can pass function as param then this strategy maybe not nessesary anymore 
+## When to Use
+
+- You have many different variants of an algorithm.
+- You want to isolate the business logic of a class from the implementation details of algorithms that are not important to the invoker class.
+- You have massive conditional statements that switch between different variants of the same algorithm.
+
+## How to Implement
+
+- Detect an algorithm that is prone to frequent changes.
+- Declare an interface that is common to all variants of the algorithm.
+- Implement the interface in all algorithm variants.
+- Clients associate the desired variant to define the behavior they want.
+
+## Pros
+
+- Algorithms can be swapped inside the object at runtime.
+- Variants are isolated from each other.
+- Follows the Open/Closed Principle: you can create new strategies without modifying existing code.
+
+## Cons
+
+- Overkill when you only have a couple of algorithm variants.
+- Clients must select the appropriate variant when using the algorithm.
+- Many programming languages now support functional programming; passing functions as parameters can sometimes replace the need for this pattern.
